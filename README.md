@@ -1,6 +1,13 @@
 # order-with-group
 
-A TypeScript utility library for managing hierarchical ordered items with grouping support.
+A lightweight, zero-dependency TypeScript utility library for managing hierarchical ordered items with grouping support.
+
+## Features
+
+- **Zero dependencies** – Lightweight and efficient.
+- **Simple API** – Easy-to-use functions for managing ordered items.
+- **Grouping support** – Handle hierarchical structures effortlessly.
+- **TypeScript-ready** – Full type safety with generics.
 
 ## Installation
 
@@ -36,21 +43,21 @@ type OWG_Item<T> = {
 };
 ```
 
-### Functions
+## API Reference
 
-#### `getItem<T>(items: OWG_Item<T>[], id: T): OWG_Item<T> | undefined`
-Finds an item by its `id`.
+### `getItem<T>(items: OWG_Item<T>[], id: T): OWG_Item<T> | undefined`
+Finds and returns an item by its `id`.
 
-#### `getSiblings<T>(items: OWG_Item<T>[], currentId: T): OWG_Item<T>[]`
-Retrieves all sibling items sorted by `order`.
+### `getSiblings<T>(items: OWG_Item<T>[], currentId: T): OWG_Item<T>[]`
+Retrieves all sibling items of the given `currentId`, sorted by `order`.
 
-#### `getNextItem<T>(items: OWG_Item<T>[], currentId: T): OWG_Item<T> | undefined`
-Finds the next item in the hierarchy.
+### `getNextItem<T>(items: OWG_Item<T>[], currentId: T): OWG_Item<T> | undefined`
+Finds the next item in the hierarchy based on order.
 
-#### `isFirst<T>(items: OWG_Item<T>[], currentId: T): boolean`
+### `isFirst<T>(items: OWG_Item<T>[], currentId: T): boolean`
 Checks if the given item is the first among its siblings.
 
-#### `isLast<T>(items: OWG_Item<T>[], currentId: T): boolean`
+### `isLast<T>(items: OWG_Item<T>[], currentId: T): boolean`
 Checks if the given item is the last among its siblings.
 
 ## License
