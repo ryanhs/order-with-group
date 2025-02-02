@@ -17,11 +17,11 @@ describe('complex 1 - just 2 group', () => {
   ];
 
   it.each([
-    [1, 2],
+    [1, 3],
     [2, 3],
     [3, 4],
     [4, 5],
-    [5, 6],
+    [5, 7],
     [6, 7],
     [7, 8],
   ])('getNextItem #%d => %s', (currentId, nextId) => {

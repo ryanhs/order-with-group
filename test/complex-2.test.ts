@@ -20,10 +20,10 @@ describe('complex 2 - chaos order, simple swap', () => {
   ];
 
   it.each([
-    [1, 2],
+    [1, 3],
     [2, 3],
     [3, 5],
-    [4, 6],
+    [4, 8],
     [5, 4],
     [6, 8],
     // [7, undefined],
