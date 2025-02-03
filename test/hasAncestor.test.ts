@@ -61,7 +61,7 @@ describe('is-ancestor-of', () => {
     [14, 10, true],
     
   ])('#%d 10 #%d => %s', (currentId, ancestorId, expected) => {
-    expect(owg.isAncestorOf(items, currentId, ancestorId)).toBe(expected);
+    expect(owg.hasAncestor(items, currentId, ancestorId)).toBe(expected);
   });
 
 });

@@ -60,6 +60,9 @@ Checks if the given item is the first among its siblings.
 ### `isLast<T>(items: OWG_Item<T>[], currentId: T): boolean`
 Checks if the given item is the last among its siblings.
 
+### `hasAncestor<T>(items: OWG_Item<T>[], descendantId: T, ancestorId: T): boolean`
+Checks if the given item is descendant of.
+
 ## License
 
 MIT

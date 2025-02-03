@@ -105,22 +105,19 @@ export function isLastInSiblings<T = number>(
   return siblings.length > 0 && siblings[siblings.length - 1].id === currentId;
 }
 
-export function isAncestorOf<T = number>(
+export function hasAncestor<T = number>(
   items: OWG_Item<T>[],
-  currentId: T,
-  ancestorId: T,
+  descendantId: T,
+  ancestorId: T
 ): boolean {
-  const current = getItem(items, currentId);
-  
-  // ensure self check
-  if (!current || typeof current.parentId === 'undefined' || current.parentId === null) {
-    return false;
+  let current = getItem(items, descendantId);
+
+  while (current?.parentId != null) {
+    if (current.parentId === ancestorId) {
+      return true;
+    }
+    current = getItem(items, current.parentId);
   }
 
-  // the only success
-  if (current?.parentId === ancestorId) {
-    return true
-  }
-
-  return isAncestorOf(items, current.parentId, ancestorId);
+  return false;
 }
